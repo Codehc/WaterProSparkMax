@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */; };
+		4AABC9C229FAD0D500AD18BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9C129FAD0D500AD18BA /* ContentView.swift */; };
+		4AABC9C429FAD0D700AD18BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABC9C329FAD0D700AD18BA /* Assets.xcassets */; };
+		4AABC9C729FAD0D700AD18BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABC9C629FAD0D700AD18BA /* Preview Assets.xcassets */; };
+		4AABC9D129FAD0D800AD18BA /* WaterProSparkMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9D029FAD0D800AD18BA /* WaterProSparkMaxTests.swift */; };
+		4AABC9DB29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9DA29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift */; };
+		4AABC9DD29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9DC29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4AABC9CD29FAD0D800AD18BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AABC9B429FAD0D500AD18BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AABC9BB29FAD0D500AD18BA;
+			remoteInfo = WaterProSparkMax;
+		};
+		4AABC9D729FAD0D800AD18BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AABC9B429FAD0D500AD18BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AABC9BB29FAD0D500AD18BA;
+			remoteInfo = WaterProSparkMax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterProSparkMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxApp.swift; sourceTree = "<group>"; };
+		4AABC9C129FAD0D500AD18BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AABC9C329FAD0D700AD18BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4AABC9C629FAD0D700AD18BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4AABC9CC29FAD0D800AD18BA /* WaterProSparkMaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterProSparkMaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AABC9D029FAD0D800AD18BA /* WaterProSparkMaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxTests.swift; sourceTree = "<group>"; };
+		4AABC9D629FAD0D800AD18BA /* WaterProSparkMaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterProSparkMaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AABC9DA29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxUITests.swift; sourceTree = "<group>"; };
+		4AABC9DC29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4AABC9B929FAD0D500AD18BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9C929FAD0D800AD18BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9D329FAD0D800AD18BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4AABC9B329FAD0D500AD18BA = {
+			isa = PBXGroup;
+			children = (
+				4AABC9BE29FAD0D500AD18BA /* WaterProSparkMax */,
+				4AABC9CF29FAD0D800AD18BA /* WaterProSparkMaxTests */,
+				4AABC9D929FAD0D800AD18BA /* WaterProSparkMaxUITests */,
+				4AABC9BD29FAD0D500AD18BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4AABC9BD29FAD0D500AD18BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */,
+				4AABC9CC29FAD0D800AD18BA /* WaterProSparkMaxTests.xctest */,
+				4AABC9D629FAD0D800AD18BA /* WaterProSparkMaxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AABC9BE29FAD0D500AD18BA /* WaterProSparkMax */ = {
+			isa = PBXGroup;
+			children = (
+				4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */,
+				4AABC9C129FAD0D500AD18BA /* ContentView.swift */,
+				4AABC9C329FAD0D700AD18BA /* Assets.xcassets */,
+				4AABC9C529FAD0D700AD18BA /* Preview Content */,
+			);
+			path = WaterProSparkMax;
+			sourceTree = "<group>";
+		};
+		4AABC9C529FAD0D700AD18BA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4AABC9C629FAD0D700AD18BA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AABC9CF29FAD0D800AD18BA /* WaterProSparkMaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				4AABC9D029FAD0D800AD18BA /* WaterProSparkMaxTests.swift */,
+			);
+			path = WaterProSparkMaxTests;
+			sourceTree = "<group>";
+		};
+		4AABC9D929FAD0D800AD18BA /* WaterProSparkMaxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4AABC9DA29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift */,
+				4AABC9DC29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift */,
+			);
+			path = WaterProSparkMaxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4AABC9BB29FAD0D500AD18BA /* WaterProSparkMax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AABC9E029FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMax" */;
+			buildPhases = (
+				4AABC9B829FAD0D500AD18BA /* Sources */,
+				4AABC9B929FAD0D500AD18BA /* Frameworks */,
+				4AABC9BA29FAD0D500AD18BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterProSparkMax;
+			productName = WaterProSparkMax;
+			productReference = 4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4AABC9CB29FAD0D800AD18BA /* WaterProSparkMaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AABC9E329FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMaxTests" */;
+			buildPhases = (
+				4AABC9C829FAD0D800AD18BA /* Sources */,
+				4AABC9C929FAD0D800AD18BA /* Frameworks */,
+				4AABC9CA29FAD0D800AD18BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AABC9CE29FAD0D800AD18BA /* PBXTargetDependency */,
+			);
+			name = WaterProSparkMaxTests;
+			productName = WaterProSparkMaxTests;
+			productReference = 4AABC9CC29FAD0D800AD18BA /* WaterProSparkMaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4AABC9D529FAD0D800AD18BA /* WaterProSparkMaxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AABC9E629FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMaxUITests" */;
+			buildPhases = (
+				4AABC9D229FAD0D800AD18BA /* Sources */,
+				4AABC9D329FAD0D800AD18BA /* Frameworks */,
+				4AABC9D429FAD0D800AD18BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4AABC9D829FAD0D800AD18BA /* PBXTargetDependency */,
+			);
+			name = WaterProSparkMaxUITests;
+			productName = WaterProSparkMaxUITests;
+			productReference = 4AABC9D629FAD0D800AD18BA /* WaterProSparkMaxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4AABC9B429FAD0D500AD18BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					4AABC9BB29FAD0D500AD18BA = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					4AABC9CB29FAD0D800AD18BA = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 4AABC9BB29FAD0D500AD18BA;
+					};
+					4AABC9D529FAD0D800AD18BA = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 4AABC9BB29FAD0D500AD18BA;
+					};
+				};
+			};
+			buildConfigurationList = 4AABC9B729FAD0D500AD18BA /* Build configuration list for PBXProject "WaterProSparkMax" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4AABC9B329FAD0D500AD18BA;
+			productRefGroup = 4AABC9BD29FAD0D500AD18BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4AABC9BB29FAD0D500AD18BA /* WaterProSparkMax */,
+				4AABC9CB29FAD0D800AD18BA /* WaterProSparkMaxTests */,
+				4AABC9D529FAD0D800AD18BA /* WaterProSparkMaxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4AABC9BA29FAD0D500AD18BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABC9C729FAD0D700AD18BA /* Preview Assets.xcassets in Resources */,
+				4AABC9C429FAD0D700AD18BA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9CA29FAD0D800AD18BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9D429FAD0D800AD18BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4AABC9B829FAD0D500AD18BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABC9C229FAD0D500AD18BA /* ContentView.swift in Sources */,
+				4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9C829FAD0D800AD18BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABC9D129FAD0D800AD18BA /* WaterProSparkMaxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AABC9D229FAD0D800AD18BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AABC9DB29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift in Sources */,
+				4AABC9DD29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4AABC9CE29FAD0D800AD18BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AABC9BB29FAD0D500AD18BA /* WaterProSparkMax */;
+			targetProxy = 4AABC9CD29FAD0D800AD18BA /* PBXContainerItemProxy */;
+		};
+		4AABC9D829FAD0D800AD18BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AABC9BB29FAD0D500AD18BA /* WaterProSparkMax */;
+			targetProxy = 4AABC9D729FAD0D800AD18BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4AABC9DE29FAD0D800AD18BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4AABC9DF29FAD0D800AD18BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4AABC9E129FAD0D800AD18BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterProSparkMax/Preview Content\"";
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AABC9E229FAD0D800AD18BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterProSparkMax/Preview Content\"";
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4AABC9E429FAD0D800AD18BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMaxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterProSparkMax.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterProSparkMax";
+			};
+			name = Debug;
+		};
+		4AABC9E529FAD0D800AD18BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMaxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterProSparkMax.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WaterProSparkMax";
+			};
+			name = Release;
+		};
+		4AABC9E729FAD0D800AD18BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMaxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterProSparkMax;
+			};
+			name = Debug;
+		};
+		4AABC9E829FAD0D800AD18BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMaxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WaterProSparkMax;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4AABC9B729FAD0D500AD18BA /* Build configuration list for PBXProject "WaterProSparkMax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABC9DE29FAD0D800AD18BA /* Debug */,
+				4AABC9DF29FAD0D800AD18BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AABC9E029FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABC9E129FAD0D800AD18BA /* Debug */,
+				4AABC9E229FAD0D800AD18BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AABC9E329FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABC9E429FAD0D800AD18BA /* Debug */,
+				4AABC9E529FAD0D800AD18BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AABC9E629FAD0D800AD18BA /* Build configuration list for PBXNativeTarget "WaterProSparkMaxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AABC9E729FAD0D800AD18BA /* Debug */,
+				4AABC9E829FAD0D800AD18BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4AABC9B429FAD0D500AD18BA /* Project object */;
+}
