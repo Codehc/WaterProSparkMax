@@ -14,6 +14,7 @@
 		4AABC9D129FAD0D800AD18BA /* WaterProSparkMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9D029FAD0D800AD18BA /* WaterProSparkMaxTests.swift */; };
 		4AABC9DB29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9DA29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift */; };
 		4AABC9DD29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9DC29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift */; };
+		4AFC683F29FB53F800C0440F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC683E29FB53F800C0440F /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4AABC9D629FAD0D800AD18BA /* WaterProSparkMaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterProSparkMaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABC9DA29FAD0D800AD18BA /* WaterProSparkMaxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxUITests.swift; sourceTree = "<group>"; };
 		4AABC9DC29FAD0D800AD18BA /* WaterProSparkMaxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4AFC683E29FB53F800C0440F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				4AABC9C129FAD0D500AD18BA /* ContentView.swift */,
 				4AABC9C329FAD0D700AD18BA /* Assets.xcassets */,
 				4AABC9C529FAD0D700AD18BA /* Preview Content */,
+				4AFC683E29FB53F800C0440F /* Config.swift */,
 			);
 			path = WaterProSparkMax;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AABC9C229FAD0D500AD18BA /* ContentView.swift in Sources */,
+				4AFC683F29FB53F800C0440F /* Config.swift in Sources */,
 				4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterProSparkMax/Preview Content\"";
-				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -430,7 +434,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMax;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonSRX.WaterProSparkMax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -446,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterProSparkMax/Preview Content\"";
-				DEVELOPMENT_TEAM = 6WTHM6Y5DB;
+				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -459,7 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonFX.WaterProSparkMax;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.AirLiteTalonSRX.WaterProSparkMax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
