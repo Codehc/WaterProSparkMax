@@ -9,9 +9,8 @@ import SwiftUI
 import Combine
 
 struct ConfigView: View {
-    @State private var config = Config(
-        table: "", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000
-    )
+    @Binding var config: Config
+    @Binding var editing: Bool
     
     var body: some View {
         let tableBinding = Binding<String>(get: {
@@ -20,36 +19,53 @@ struct ConfigView: View {
             self.config.table = $0.lowercased()
         })
         
-        VStack {
-            Text("WaterProSparkMax!")
-                .bold()
-                .font(.title)
-                .fontWeight(.black)
+        NavigationView {
             VStack {
-                Text("Interval")
-                IntervalPicker(milliseconds: $config.interval)
-            }
-            VStack {
-                Text("Watering Time")
-                WateringLengthPicker(milliseconds: $config.wateringTime)
-            }
-            Toggle("Disable Smart Watering", isOn: $config.usingPurelyInterval)
+                VStack {
+                    Text("Interval")
+                    IntervalPicker(milliseconds: $config.interval)
+                }
+                VStack {
+                    Text("Watering Time")
+                    WateringLengthPicker(milliseconds: $config.wateringTime)
+                }
+                Toggle("Disable Smart Watering", isOn: $config.usingPurelyInterval)
+                    .padding()
+                TextField("Plant Name", text: tableBinding)
+                    .padding()
+                    .autocorrectionDisabled(true)
+                    .foregroundColor(.white)
+                    .background(Color.gray.opacity(0.3))
+                    .cornerRadius(15)
+                Button(action: configure) {
+                    Text("Configure")
+                }
                 .padding()
-            TextField("Plant Name", text: tableBinding)
-                .padding()
-                .autocorrectionDisabled(true)
-                .foregroundColor(.white)
                 .background(Color.gray.opacity(0.3))
                 .cornerRadius(15)
-            Button(action: configure) {
-                Text("Configure")
+                Spacer()
             }
             .padding()
-            .background(Color.gray.opacity(0.3))
-            .cornerRadius(15)
-            Spacer()
+            .foregroundColor(.white)
+            .navigationTitle(config.table)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel", action: {
+                        withAnimation {
+                            editing.toggle()
+                        }
+                    })
+                    .foregroundColor(.teal)
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done", action: {
+                        print("Add pressed")
+                    })
+                    .foregroundColor(.teal)
+                }
+            }
         }
-        .padding()
     }
     
     func configure() {
@@ -203,7 +219,13 @@ struct MultiPicker: View  {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var config = Config(
+        table: "Acacia Tree", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000, enabled: true
+    )
+    
+    @State static var editing = true
+    
     static var previews: some View {
-        ConfigView()
+        ConfigView(config: $config, editing: $editing)
     }
 }

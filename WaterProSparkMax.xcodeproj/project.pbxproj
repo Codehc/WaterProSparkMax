@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A21556429FD94ED0030D6CD /* PlantSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */; };
 		4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */; };
-		4AABC9C229FAD0D500AD18BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9C129FAD0D500AD18BA /* ContentView.swift */; };
+		4AABC9C229FAD0D500AD18BA /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9C129FAD0D500AD18BA /* ConfigView.swift */; };
 		4AABC9C429FAD0D700AD18BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABC9C329FAD0D700AD18BA /* Assets.xcassets */; };
 		4AABC9C729FAD0D700AD18BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABC9C629FAD0D700AD18BA /* Preview Assets.xcassets */; };
 		4AABC9D129FAD0D800AD18BA /* WaterProSparkMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9D029FAD0D800AD18BA /* WaterProSparkMaxTests.swift */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectionView.swift; sourceTree = "<group>"; };
 		4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterProSparkMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxApp.swift; sourceTree = "<group>"; };
-		4AABC9C129FAD0D500AD18BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4AABC9C129FAD0D500AD18BA /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		4AABC9C329FAD0D700AD18BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AABC9C629FAD0D700AD18BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4AABC9CC29FAD0D800AD18BA /* WaterProSparkMaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterProSparkMaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */,
-				4AABC9C129FAD0D500AD18BA /* ContentView.swift */,
+				4AABC9C129FAD0D500AD18BA /* ConfigView.swift */,
+				4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */,
 				4AABC9C329FAD0D700AD18BA /* Assets.xcassets */,
 				4AABC9C529FAD0D700AD18BA /* Preview Content */,
 				4AFC683E29FB53F800C0440F /* Config.swift */,
@@ -260,9 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AABC9C229FAD0D500AD18BA /* ContentView.swift in Sources */,
+				4AABC9C229FAD0D500AD18BA /* ConfigView.swift in Sources */,
 				4AFC683F29FB53F800C0440F /* Config.swift in Sources */,
 				4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */,
+				4A21556429FD94ED0030D6CD /* PlantSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,11 +428,13 @@
 				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,11 +459,13 @@
 				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

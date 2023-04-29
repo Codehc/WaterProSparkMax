@@ -8,10 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct Config {
+struct Config: Identifiable {
     var table: String
     var usingPurelyInterval: Bool
     var interval: Int
     var wateringThreshold: Int
     var wateringTime: Int
+    var enabled: Bool
+    
+    var id: String { table }
 }

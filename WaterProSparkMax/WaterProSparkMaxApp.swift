@@ -11,7 +11,7 @@ import SwiftUI
 struct WaterProSparkMaxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlantSelectionView()
         }
     }
 }
