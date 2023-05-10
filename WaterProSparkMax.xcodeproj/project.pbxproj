@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A07B0F82A01904600EE3939 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A07B0F72A01904600EE3939 /* GoogleService-Info.plist */; };
-		4A07B0F92A01904600EE3939 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A07B0F72A01904600EE3939 /* GoogleService-Info.plist */; };
-		4A07B0FA2A01904600EE3939 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A07B0F72A01904600EE3939 /* GoogleService-Info.plist */; };
 		4A07B0FD2A01916700EE3939 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A07B0FC2A01916700EE3939 /* FirebaseAnalytics */; };
 		4A07B0FF2A01916700EE3939 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4A07B0FE2A01916700EE3939 /* FirebaseAuth */; };
 		4A07B1012A01916700EE3939 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4A07B1002A01916700EE3939 /* FirebaseDatabase */; };
 		4A07B1032A01916700EE3939 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A07B1022A01916700EE3939 /* FirebaseDatabaseSwift */; };
 		4A07B1052A01916700EE3939 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4A07B1042A01916700EE3939 /* FirebaseStorage */; };
 		4A21556429FD94ED0030D6CD /* PlantSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */; };
+		4A8FA6D42A0C2D6C00ABB5CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A8FA6D32A0C2D6C00ABB5CD /* GoogleService-Info.plist */; };
 		4AABC9C029FAD0D500AD18BA /* WaterProSparkMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */; };
 		4AABC9C229FAD0D500AD18BA /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABC9C129FAD0D500AD18BA /* ConfigView.swift */; };
 		4AABC9C429FAD0D700AD18BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABC9C329FAD0D700AD18BA /* Assets.xcassets */; };
@@ -44,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A07B0F72A01904600EE3939 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectionView.swift; sourceTree = "<group>"; };
+		4A8FA6D32A0C2D6C00ABB5CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterProSparkMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxApp.swift; sourceTree = "<group>"; };
 		4AABC9C129FAD0D500AD18BA /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -92,7 +90,7 @@
 		4AABC9B329FAD0D500AD18BA = {
 			isa = PBXGroup;
 			children = (
-				4A07B0F72A01904600EE3939 /* GoogleService-Info.plist */,
+				4A8FA6D32A0C2D6C00ABB5CD /* GoogleService-Info.plist */,
 				4AABC9BE29FAD0D500AD18BA /* WaterProSparkMax */,
 				4AABC9CF29FAD0D800AD18BA /* WaterProSparkMaxTests */,
 				4AABC9D929FAD0D800AD18BA /* WaterProSparkMaxUITests */,
@@ -264,7 +262,7 @@
 			files = (
 				4AABC9C729FAD0D700AD18BA /* Preview Assets.xcassets in Resources */,
 				4AABC9C429FAD0D700AD18BA /* Assets.xcassets in Resources */,
-				4A07B0F82A01904600EE3939 /* GoogleService-Info.plist in Resources */,
+				4A8FA6D42A0C2D6C00ABB5CD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A07B0F92A01904600EE3939 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +277,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A07B0FA2A01904600EE3939 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
