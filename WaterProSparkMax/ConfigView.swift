@@ -124,13 +124,6 @@ struct IntervalPicker: View {
             // Decode minutes from ms
             minutes = 60 + ms / 60000
         }
-        .onDisappear() {
-            //milliseconds = (days % 30) * Int(8.64e+7) + (hours % 24) * Int(3.6e+6) + (minutes % 60) * 60000;
-            /*
-            print("Should set \(shouldSet)")
-            if shouldSet {
-            }*/
-        }
     }
 }
 
@@ -147,12 +140,6 @@ struct WateringLengthPicker: View {
         }
         .onAppear() {
             seconds = 60 + milliseconds / 1000
-        }
-        .onDisappear() {
-            // Encode days, hours, minutes
-            //milliseconds = (seconds % 60) * 1000
-            /*if shouldSet {
-            }*/
         }
     }
 }

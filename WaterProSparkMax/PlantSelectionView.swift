@@ -11,10 +11,9 @@ import FirebaseDatabase
 struct PlantSelectionView: View {
     @State var deleteMode: Bool = false
     
-    @StateObject var plants: ConfigList = ConfigList(configurations: [])
+    @StateObject var plants: ConfigList = ConfigList()
     
     /*
-     
          Config(
              table: "Acacia Tree", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000, enabled: true
          )
@@ -27,20 +26,21 @@ struct PlantSelectionView: View {
                 VStack() {
                     ForEach(0 ..< plants.configurations.count, id: \.self) { plantId in
                         HStack {
-                            ZStack {
-                                if deleteMode {
-                                    Button(action: {
-                                        let uuid = plants.configurations[plantId].id
-                                        plants.configurations.remove(at: plantId)
-                                        plants.deleteAtUUID(uuid: uuid)
-                                    }) {
-                                        Label("", systemImage: "minus.circle.fill")
-                                            .foregroundColor(.red)
-                                            .imageScale(.large)
-                                    }
+                            Spacer()
+                            if deleteMode {
+                                Button(action: {
+                                    let uuid = plants.configurations[plantId].id
+                                    plants.configurations.remove(at: plantId)
+                                    plants.deleteAtUUID(uuid: uuid)
+                                }) {
+                                    Label("", systemImage: "minus.circle.fill")
+                                        .foregroundColor(.red)
+                                        .imageScale(.large)
                                 }
+                                .transition(.asymmetric(insertion: .slide, removal: .backslide).combined(with: .opacity))
+                                .background(.green)
                             }
-                            .transition(.asymmetric(insertion: .slide, removal: .backslide))
+                            
                             PlantView(deleteMode: $deleteMode).environmentObject(plants.configurations[plantId])
                                 .environmentObject(plants)
                         }
@@ -107,6 +107,8 @@ struct PlantView: View {
                     .font(.system(size: 36))
                     .fontWeight(.light)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                
+                .background(.green)
             }
             .sheet(isPresented: $editing) {
                 ConfigView()
@@ -124,6 +126,7 @@ struct PlantView: View {
                 } else {
                     Label("", systemImage: "chevron.right")
                         .transition(.asymmetric(insertion: .backslide, removal: .slide).combined(with: .opacity))
+                        .background(.green)
                 }
             }
         }
