@@ -9,223 +9,174 @@ import SwiftUI
 import Combine
 
 struct ConfigView: View {
-    @Binding var config: Config
-    @Binding var editing: Bool
+    @Environment(\.dismiss) var dismiss
+    
+    @EnvironmentObject var config: Config
+    @EnvironmentObject var plants: ConfigList
+    
+    @State private var keyboardHeight: CGFloat = 0
+    @State private var shouldSet = true
+    
+    @State private var days = 30
+    @State private var hours = 24
+    @State private var minutes = 60
+    
+    @State private var seconds = 60
     
     var body: some View {
-        let tableBinding = Binding<String>(get: {
-            self.config.table
-        }, set: {
-            self.config.table = $0.lowercased()
-        })
-        
         NavigationView {
-            VStack {
-                VStack {
-                    Text("Interval")
-                    IntervalPicker(milliseconds: $config.interval)
+            VStack() {
+                Text("Interval")
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal)
+                
+                IntervalPicker(milliseconds: $config.interval, days: $days, hours: $hours, minutes: $minutes, shouldSet: $shouldSet)
+                    .padding(.horizontal)
+                    .padding(.top)
+                
+                Divider()
+                
+                Text("Watering Time")
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
+                WateringLengthPicker(milliseconds: $config.wateringTime, seconds: $seconds, shouldSet: $shouldSet)
+                    .padding(.horizontal)
+                    
+                List {
+                    HStack {
+                        Text("Plant Name")
+                        Spacer()
+                        TextField("Plant Name", text: $config.name)
+                            .autocorrectionDisabled(true)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundStyle(.secondary)
+                    }
+                    Toggle("Disable Smart Watering", isOn: $config.usingPurelyInterval)
                 }
-                VStack {
-                    Text("Watering Time")
-                    WateringLengthPicker(milliseconds: $config.wateringTime)
-                }
-                Toggle("Disable Smart Watering", isOn: $config.usingPurelyInterval)
-                    .padding()
-                TextField("Plant Name", text: tableBinding)
-                    .padding()
-                    .autocorrectionDisabled(true)
-                    .foregroundColor(.white)
-                    .background(Color.gray.opacity(0.3))
-                    .cornerRadius(15)
-                Button(action: configure) {
-                    Text("Configure")
-                }
-                .padding()
-                .background(Color.gray.opacity(0.3))
-                .cornerRadius(15)
-                Spacer()
+                .padding(.horizontal)
+                .scrollDisabled(true)
             }
-            .padding()
             .foregroundColor(.white)
-            .navigationTitle(config.table)
+            .navigationTitle("Edit Plant")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel", action: {
-                        withAnimation {
-                            editing.toggle()
-                        }
-                    })
+                    Button("Cancel") {
+                        shouldSet = false
+                        dismiss()
+                    }
                     .foregroundColor(.teal)
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done", action: {
-                        print("Add pressed")
-                    })
+                    Button("Done") {
+                        shouldSet = true
+                        dismiss()
+                    }
                     .foregroundColor(.teal)
+                    .bold()
                 }
             }
         }
-    }
-    
-    func configure() {
-        
+        .onDisappear() {
+            config.interval = (days % 30) * Int(8.64e+7) + (hours % 24) * Int(3.6e+6) + (minutes % 60) * 60000
+            config.wateringTime = (seconds % 60) * 1000
+            
+            if (shouldSet) {
+                config.saveChanges()
+                plants.writeToConfig(config: config)
+            } else {
+                config.discardChanges()
+            }
+        }
     }
 }
 
 struct IntervalPicker: View {
     @Binding var milliseconds: Int
     
-    @State var days: String = "0"
-    @State var hours: String = "0"
-    @State var minutes: String = "0"
+    @Binding var days: Int
+    @Binding var hours: Int
+    @Binding var minutes: Int
+    
+    @Binding var shouldSet: Bool
     
     var body: some View {
         HStack {
-            PickerColumn(timeUnit: "days", range: Array(0...30).map { "\($0)" }, selection: $days)
-                .onChange(of: days) { [days] newStringDays in
-                    let oldDays = Int(days) ?? 0
-                    let newDays = Int(newStringDays) ?? 0
-                    
-                    subtractDays(days: oldDays)
-                    addDays(days: newDays)
-                }
-            PickerColumn(timeUnit: "hours", range: Array(0...24).map { "\($0)" }, selection: $hours)
-                .onChange(of: hours) { [hours] newStringHours in
-                    let oldHours = Int(hours) ?? 0
-                    let newHours = Int(newStringHours) ?? 0
-                    
-                    subtractHours(hours: oldHours)
-                    addHours(hours: newHours)
-                }
-            PickerColumn(timeUnit: "min", range: Array(0...60).map { "\($0)" }, selection: $minutes)
-                .onChange(of: minutes) { [minutes] newStringMinutes in
-                    let oldMinutes = Int(minutes) ?? 0
-                    let newMinutes = Int(newStringMinutes) ?? 0
-                    
-                    subtractMinutes(minutes: oldMinutes)
-                    addMinutes(minutes: newMinutes)
-                }
+            PickerColumn(timeUnit: "days", range: Array(0...60), mod: 30, selection: $days)
+            PickerColumn(timeUnit: "hours", range: Array(0...48), mod: 24, selection: $hours)
+            PickerColumn(timeUnit: "min", range: Array(0...120), mod: 60, selection: $minutes)
         }
-        .frame(height: 200)
-    }
-    
-    func addDays(days: Int) {
-        self.milliseconds += days * Int(8.64e+7)
-    }
-    
-    func subtractDays(days: Int) {
-        self.milliseconds -= days * Int(8.64e+7)
-    }
-    
-    func addHours(hours: Int) {
-        self.milliseconds += hours * Int(3.6e+6)
-    }
-    
-    func subtractHours(hours: Int) {
-        self.milliseconds -= hours * Int(3.6e+6)
-    }
-    
-    func addMinutes(minutes: Int) {
-        self.milliseconds += minutes * 60000
-    }
-    
-    func subtractMinutes(minutes: Int) {
-        self.milliseconds -= minutes * 60000
+        .onAppear() {
+            var ms = milliseconds
+            
+            // Decode days from ms
+            days = 30 + ms / Int(8.64e+7)
+            ms %= Int(8.64e+7)
+            
+            // Decode hours from ms
+            hours = 24 + ms / Int(3.6e+6)
+            ms %= Int(3.6e+6)
+            
+            
+            // Decode minutes from ms
+            minutes = 60 + ms / 60000
+        }
+        .onDisappear() {
+            //milliseconds = (days % 30) * Int(8.64e+7) + (hours % 24) * Int(3.6e+6) + (minutes % 60) * 60000;
+            /*
+            print("Should set \(shouldSet)")
+            if shouldSet {
+            }*/
+        }
     }
 }
 
 struct WateringLengthPicker: View {
     @Binding var milliseconds: Int
     
-    @State var seconds: String = "0"
+    @Binding var seconds: Int
+    
+    @Binding var shouldSet: Bool
     
     var body: some View {
         HStack {
-            PickerColumn(timeUnit: "sec", range: Array(0...60).map { "\($0)" }, selection: $seconds)
-                .onChange(of: seconds) { [seconds] newStringSeconds in
-                    let oldSeconds = Int(seconds) ?? 0
-                    let newSeconds = Int(newStringSeconds) ?? 0
-                    
-                    subtractSeconds(seconds: oldSeconds)
-                    addSeconds(seconds: newSeconds)
-                }
+            PickerColumn(timeUnit: "sec", range: Array(0...120), mod: 60, selection: $seconds)
         }
-        .frame(height: 200)
-    }
-    
-    func addSeconds(seconds: Int) {
-        self.milliseconds += seconds * 1000
-    }
-    
-    func subtractSeconds(seconds: Int) {
-        self.milliseconds -= seconds * 1000
+        .onAppear() {
+            seconds = 60 + milliseconds / 1000
+        }
+        .onDisappear() {
+            // Encode days, hours, minutes
+            //milliseconds = (seconds % 60) * 1000
+            /*if shouldSet {
+            }*/
+        }
     }
 }
 
 struct PickerColumn: View {
-    typealias Label = String
-    typealias Entry = String
+    let timeUnit: String
+    let range: [Int]
     
-    let timeUnit: Label
-    let range: [Entry]
+    let mod: Int
     
-    @Binding var selection: Entry
+    @Binding var selection: Int
     
     var body: some View {
         HStack() {
-            GeometryReader { geometry in
-                Picker(timeUnit, selection: $selection) {
-                    ForEach(0 ..< range.count, id: \.self) { row in
-                        Text(range[row])
-                            .tag(range[row])
-                    }
+            Picker(timeUnit, selection: $selection) {
+                ForEach(range, id: \.self) { row in
+                    Text("\(row % mod)")
+                        .tag(row)
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height)
-                .pickerStyle(WheelPickerStyle())
-                .clipped()
             }
+            .pickerStyle(.wheel)
+            .clipped()
             Text(timeUnit)
                 .bold()
         }
-    }
-}
-
-struct MultiPicker: View  {
-
-    typealias Label = String
-    typealias Entry = String
-
-    let data: [ (Label, [Entry]) ]
-    @Binding var selection: [Entry]
-
-    var body: some View {
-        GeometryReader { geometry in
-            HStack {
-                ForEach(0 ..< self.data.count, id: \.self) { column in
-                    Picker(self.data[column].0, selection: self.$selection[column]) {
-                        ForEach(0..<self.data[column].1.count, id: \.self) { row in
-                            Text(verbatim: self.data[column].1[row])
-                                .tag(self.data[column].1[row])
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: geometry.size.width / CGFloat(self.data.count), height: geometry.size.height)
-                    .clipped()
-                }
-            }
-        }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    @State static var config = Config(
-        table: "Acacia Tree", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000, enabled: true
-    )
-    
-    @State static var editing = true
-    
-    static var previews: some View {
-        ConfigView(config: $config, editing: $editing)
     }
 }

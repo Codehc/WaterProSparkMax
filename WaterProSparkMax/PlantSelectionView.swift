@@ -6,22 +6,44 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct PlantSelectionView: View {
     @State var deleteMode: Bool = false
-    @State var plants: [Config] = [
-        Config(
-            table: "Acacia Tree", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000, enabled: true
-        )
-    ]
+    
+    @StateObject var plants: ConfigList = ConfigList(configurations: [])
+    
+    /*
+     
+         Config(
+             table: "Acacia Tree", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 5000, enabled: true
+         )
+     */
     
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false) {
                 Divider()
                 VStack() {
-                    ForEach($plants) { plant in
-                        PlantView(plant: plant, deleteMode: $deleteMode)
+                    ForEach(0 ..< plants.configurations.count, id: \.self) { plantId in
+                        HStack {
+                            ZStack {
+                                if deleteMode {
+                                    Button(action: {
+                                        let uuid = plants.configurations[plantId].id
+                                        plants.configurations.remove(at: plantId)
+                                        plants.deleteAtUUID(uuid: uuid)
+                                    }) {
+                                        Label("", systemImage: "minus.circle.fill")
+                                            .foregroundColor(.red)
+                                            .imageScale(.large)
+                                    }
+                                }
+                            }
+                            .transition(.asymmetric(insertion: .slide, removal: .backslide))
+                            PlantView(deleteMode: $deleteMode).environmentObject(plants.configurations[plantId])
+                                .environmentObject(plants)
+                        }
                         Divider()
                     }
                 }
@@ -46,55 +68,57 @@ struct PlantSelectionView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        print("Add pressed")
+                        plants.configurations.append(Config(
+                            table: "Default", usingPurelyInterval: false, interval: 0, wateringThreshold: 20, wateringTime: 0, enabled: true
+                        ))
+                        
+                        plants.writeToConfig(config: plants.configurations[plants.configurations.count - 1])
                     }) {
-                        Label("Add Folder", systemImage: "plus")
+                        Label("Add Plant", systemImage: "plus")
                             .foregroundColor(.teal)
                     }
                 }
+            }
+            .onAppear() {
+                plants.listentoRealtimeDatabase()
+            }
+            .onDisappear() {
+                plants.stopListening()
             }
         }
     }
 }
 
 struct PlantView: View {
-    @Binding var plant: Config
+    @EnvironmentObject var plant: Config
+    @EnvironmentObject var plants: ConfigList
+    
     @Binding var deleteMode: Bool
     
-    @State var editing = false
+    @State var editing: Bool = false
     
     var body: some View {
         HStack {
-            ZStack {
-                if deleteMode {
-                    Button(action: {
-                        
-                    }) {
-                        Label("", systemImage: "minus.circle.fill")
-                            .foregroundColor(.red)
-                            .imageScale(.large)
-                    }
-                }
-            }
-            .transition(.asymmetric(insertion: .slide, removal: .backslide))
-            
             Button(action: {
                 editing.toggle()
             }) {
-                Text(plant.table)
+                Text(plant.name)
                     .foregroundColor(plant.enabled ? .white : .gray)
                     .font(.system(size: 36))
                     .fontWeight(.light)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
             .sheet(isPresented: $editing) {
-                ConfigView(config: $plant, editing: $editing)
+                ConfigView()
             }
             Spacer()
             
             ZStack {
                 if !deleteMode {
                     Toggle("Enabled", isOn: $plant.enabled)
+                        .onChange(of: plant.enabled) { _ in
+                            plants.writeToConfig(config: plant)
+                        }
                         .transition(.asymmetric(insertion: .slide, removal: .backslide).combined(with: .opacity))
                         .labelsHidden()
                 } else {
