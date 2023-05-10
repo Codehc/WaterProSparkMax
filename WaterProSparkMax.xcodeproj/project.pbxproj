@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSelectionView.swift; sourceTree = "<group>"; };
 		4A8FA6D32A0C2D6C00ABB5CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A8FA6D52A0C2EBB00ABB5CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AABC9BC29FAD0D500AD18BA /* WaterProSparkMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterProSparkMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterProSparkMaxApp.swift; sourceTree = "<group>"; };
 		4AABC9C129FAD0D500AD18BA /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		4AABC9BE29FAD0D500AD18BA /* WaterProSparkMax */ = {
 			isa = PBXGroup;
 			children = (
+				4A8FA6D52A0C2EBB00ABB5CD /* Info.plist */,
 				4AABC9BF29FAD0D500AD18BA /* WaterProSparkMaxApp.swift */,
 				4AABC9C129FAD0D500AD18BA /* ConfigView.swift */,
 				4A21556329FD94ED0030D6CD /* PlantSelectionView.swift */,
@@ -452,8 +454,8 @@
 				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterProSparkMax/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -483,8 +485,8 @@
 				DEVELOPMENT_TEAM = D26843VSFF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterProSparkMax/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
