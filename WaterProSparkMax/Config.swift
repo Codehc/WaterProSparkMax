@@ -122,6 +122,8 @@ class ConfigList: ObservableObject {
     
     init() {
         self.configurations = []
+        
+        listentoRealtimeDatabase()
     }
     
     @Published var configurations: [Config]

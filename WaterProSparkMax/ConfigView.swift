@@ -29,6 +29,7 @@ struct ConfigView: View {
                 Text("Interval")
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
+                    .bold()
                 
                 IntervalPicker(milliseconds: $config.interval, days: $days, hours: $hours, minutes: $minutes, shouldSet: $shouldSet)
                     .padding(.horizontal)
@@ -40,6 +41,7 @@ struct ConfigView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
                     .padding(.top)
+                    .bold()
                     
                 WateringLengthPicker(milliseconds: $config.wateringTime, seconds: $seconds, shouldSet: $shouldSet)
                     .padding(.horizontal)
@@ -55,7 +57,6 @@ struct ConfigView: View {
                     }
                     Toggle("Disable Smart Watering", isOn: $config.usingPurelyInterval)
                 }
-                .padding(.horizontal)
                 .scrollDisabled(true)
             }
             .foregroundColor(.white)
