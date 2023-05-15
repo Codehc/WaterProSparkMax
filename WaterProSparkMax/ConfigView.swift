@@ -37,14 +37,29 @@ struct ConfigView: View {
                 
                 Divider()
                 
-                Text("Watering Time")
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .padding(.top)
-                    .bold()
+                HStack {
+                    VStack {
+                        Text("Watering Time")
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
+                            .padding(.top)
+                            .bold()
+                        
+                        WateringLengthPicker(milliseconds: $config.wateringTime, seconds: $seconds, shouldSet: $shouldSet)
+                            .padding(.horizontal)
+                    }
                     
-                WateringLengthPicker(milliseconds: $config.wateringTime, seconds: $seconds, shouldSet: $shouldSet)
-                    .padding(.horizontal)
+                    VStack {
+                        Text("Watering Threshold")
+                            .frame(maxWidth: .infinity)
+                            .padding(.horizontal)
+                            .padding(.top)
+                            .bold()
+                        
+                        PickerColumn(timeUnit: "%", range: Array(0...100), mod: 120, selection: $config.wateringThreshold)
+                            .padding()
+                    }
+                }
                     
                 List {
                     HStack {

@@ -24,28 +24,31 @@ struct PlantSelectionView: View {
             ZStack {
                 if (plants.configurations.count != 0) {
                     ScrollView(showsIndicators: false) {
-                        Divider()
-                        VStack() {
-                            ForEach(0 ..< plants.configurations.count, id: \.self) { plantId in
-                                HStack {
-                                    Spacer()
-                                    if deleteMode {
-                                        Button(action: {
-                                            let uuid = plants.configurations[plantId].id
-                                            plants.configurations.remove(at: plantId)
-                                            plants.deleteAtUUID(uuid: uuid)
-                                        }) {
-                                            Label("", systemImage: "minus.circle.fill")
-                                                .foregroundColor(.red)
-                                                .imageScale(.large)
-                                        }
-                                        .transition(.asymmetric(insertion: .slide, removal: .backslide).combined(with: .opacity))
-                                    }
-                                    
-                                    PlantView(deleteMode: $deleteMode).environmentObject(plants.configurations[plantId])
-                                        .environmentObject(plants)
-                                }
+                        HStack {
+                            Spacer()
+                            VStack() {
                                 Divider()
+                                ForEach(0 ..< plants.configurations.count, id: \.self) { plantId in
+                                    HStack {
+                                        Spacer()
+                                        if deleteMode {
+                                            Button(action: {
+                                                let uuid = plants.configurations[plantId].id
+                                                plants.configurations.remove(at: plantId)
+                                                plants.deleteAtUUID(uuid: uuid)
+                                            }) {
+                                                Label("", systemImage: "minus.circle.fill")
+                                                    .foregroundColor(.red)
+                                                    .imageScale(.large)
+                                            }
+                                            .transition(.asymmetric(insertion: .slide, removal: .backslide).combined(with: .opacity))
+                                        }
+                                        
+                                        PlantView(deleteMode: $deleteMode).environmentObject(plants.configurations[plantId])
+                                            .environmentObject(plants)
+                                    }
+                                    Divider()
+                                }
                             }
                         }
                     }

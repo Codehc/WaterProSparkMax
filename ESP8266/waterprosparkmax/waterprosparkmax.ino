@@ -17,6 +17,8 @@ const int SENSOR_PIN = A0;
 const int RELAY_PIN = D5;
 
 struct Config {
+  bool enabled;
+
   bool usingPurelyInterval;
   int interval; // ms
 
@@ -26,7 +28,7 @@ struct Config {
 } config;
 
 void setup() {
-  Serial.begin(115200); // open serial port, set the baud rate to 9600 bps
+  Serial.begin(115200);
 
   Serial.println("Initializing");
 
@@ -66,11 +68,12 @@ void loop() {
   long int time = millis();
 
   // Query Firebase and update local config
-  FirebaseObject remoteConfigGet = Firebase.get(String("/") + PROFILE);
+  FirebaseObject remoteConfigGet = Firebase.get(String("/profiles/") + PROFILE);
   if (Firebase.failed()) {
       Serial.println("Firebase get failed");
       Serial.println(Firebase.error());
   } else {
+    config.enabled = remoteConfigGet.getBool("enabled");
     config.usingPurelyInterval = remoteConfigGet.getBool("usingPurelyInterval");
     config.interval = remoteConfigGet.getInt("interval");
     config.wateringThreshold = remoteConfigGet.getInt("wateringThreshold");
@@ -98,12 +101,12 @@ void loop() {
     }
   }
 
-  if (time <= endWaterTime) {
-    digitalWrite(RELAY_PIN, HIGH);
-    lastOn = true;
-  } else {
+  if (!config.enabled || time > endWaterTime) {
     digitalWrite(RELAY_PIN, LOW);
     lastOn = false;
+  } else if (time <= endWaterTime) {
+    digitalWrite(RELAY_PIN, HIGH);
+    lastOn = true;
   }
   
   delay(250);
