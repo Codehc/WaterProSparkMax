@@ -37,6 +37,7 @@ struct ConfigView: View {
                 
                 Divider()
                 
+<<<<<<< HEAD
                 HStack {
                     VStack {
                         Text("Watering Time")
@@ -48,6 +49,13 @@ struct ConfigView: View {
                         WateringLengthPicker(milliseconds: $config.wateringTime, seconds: $seconds, shouldSet: $shouldSet)
                             .padding(.horizontal)
                     }
+=======
+                Text("Watering Time")
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal)
+                    .padding(.top)
+                    .bold()
+>>>>>>> adfd466a394b58bbf9ba00bd6cc445fcc71f92d4
                     
                     VStack {
                         Text("Watering Threshold")
